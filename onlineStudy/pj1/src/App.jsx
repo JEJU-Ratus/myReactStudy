@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
@@ -5,9 +7,11 @@ import TabButton from "./components/TabButton.jsx";
 
 
 function App() {
+  const [ tabContent, setTabContent] = useState('Please click a button');
+
   function handleSelect(selectedButton){
     // selectedButton => 'Components' , 'Jsx', 'Props', 'State' 중 하나
-    console.log(selectedButton);
+    setTabContent(selectedButton);
 }
 
   return (
@@ -33,7 +37,7 @@ function App() {
               <TabButton onSelect={() => handleSelect('Props')}>Props</TabButton>
               <TabButton onSelect={() => handleSelect('State')}>State</TabButton>
             </menu>
-
+            {tabContent}
         </section>
       </main>
     </div>
