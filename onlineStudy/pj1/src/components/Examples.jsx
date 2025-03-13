@@ -1,8 +1,10 @@
+// Tab 메뉴
+
 // Hooks
 import { useState } from "react";
-//components
+// Components
 import TabButton from "./TabButton";
-//data
+// Data
 import { EXAMPLES } from "../data-with-examples";
 
 export default function Examples() {

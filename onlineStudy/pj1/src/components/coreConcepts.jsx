@@ -1,4 +1,8 @@
+// 메인의 이미지와 설명들
+
+// Data
 import { CORE_CONCEPTS } from "../data";
+// Components
 import CoreConcept from "./CoreConcept";
 
 export default function CoreConcepts() {
