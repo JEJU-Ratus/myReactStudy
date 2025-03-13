@@ -46,7 +46,11 @@ function App() {
           <h2>Examples</h2>
           <menu>
             {Object.keys(EXAMPLES).map((key) => (
-              <TabButton onSelect={() => handleSelect(key)} key={key}>
+              <TabButton
+                isSelected={tabContent === key}
+                onSelect={() => handleSelect(key)}
+                key={key}
+              >
                 {key}
               </TabButton>
             ))}
