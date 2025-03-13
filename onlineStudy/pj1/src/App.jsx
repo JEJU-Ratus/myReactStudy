@@ -1,12 +1,11 @@
 // Hooks
 import { useState } from "react";
 // Data
-import { CORE_CONCEPTS } from "./data.js";
 import { EXAMPLES } from "./data-with-examples.js";
 // Components
 import Header from "./components/Header/Header.jsx";
-import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
+import CoreConcepts from "./components/coreConcepts.jsx";
 
 function App() {
   const [tabContent, setTabContent] = useState("");
@@ -34,14 +33,7 @@ function App() {
     <>
       <Header />
       <main>
-        <section id="core-concepts">
-          <h2>Core Concept</h2>
-          <ul>
-            {CORE_CONCEPTS.map((concept, index) => (
-              <CoreConcept key={concept.title} {...concept} />
-            ))}
-          </ul>
-        </section>
+        <CoreConcepts />
         <section id="examples">
           <h2>Examples</h2>
           <menu>
