@@ -10,8 +10,7 @@ import TabButton from "./components/TabButton.jsx";
 
 
 function App() {
-  const tabMainContent = Object.keys(EXAMPLES)[0];
-  const [ tabContent, setTabContent] = useState(tabMainContent);
+  const [ tabContent, setTabContent] = useState('');
 
   function handleSelect(selectedButton){
     // selectedButton => 'Components' , 'Jsx', 'Props', 'State' 중 하나
@@ -44,6 +43,7 @@ function App() {
               <TabButton onSelect={() => handleSelect('Props')}>Props</TabButton>
               <TabButton onSelect={() => handleSelect('State')}>State</TabButton> */}
             </menu>
+              {!tabContent ? <p>Please select a topic.</p> :(
             <div id="tab-content">
               <h3>{EXAMPLES[tabContent].title}</h3>
               <p>{EXAMPLES[tabContent].description}</p>
@@ -51,7 +51,7 @@ function App() {
                 <code>{EXAMPLES[tabContent].code}</code>
               </pre>
             </div>
-            
+            )}
         </section>
       </main>
     </div>
