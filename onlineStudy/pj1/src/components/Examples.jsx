@@ -5,6 +5,7 @@ import { useState } from "react";
 // Components
 import TabButton from "./TabButton";
 import Section from "./Section";
+import Tabs from "./Tabs";
 // Data
 import { EXAMPLES } from "../data-with-examples";
 
@@ -32,18 +33,23 @@ export default function Examples() {
 
   return (
     <Section id="examples" title="Examples">
-      <menu>
-        {Object.keys(EXAMPLES).map((key) => (
-          <TabButton
-            isSelected={tabContent === key}
-            onClick={() => handleSelect(key)}
-            key={key}
-          >
-            {key}
-          </TabButton>
-        ))}
-      </menu>
-      {tabViewContent}
+      <Tabs
+        buttons={
+          <>
+            {Object.keys(EXAMPLES).map((key) => (
+              <TabButton
+                isSelected={tabContent === key}
+                onClick={() => handleSelect(key)}
+                key={key}
+              >
+                {key}
+              </TabButton>
+            ))}
+          </>
+        }
+      >
+        {tabViewContent}
+      </Tabs>
     </Section>
   );
 }
