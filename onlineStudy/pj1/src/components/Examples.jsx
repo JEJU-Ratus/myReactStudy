@@ -4,6 +4,7 @@
 import { useState } from "react";
 // Components
 import TabButton from "./TabButton";
+import Section from "./Section";
 // Data
 import { EXAMPLES } from "../data-with-examples";
 
@@ -30,13 +31,12 @@ export default function Examples() {
   }
 
   return (
-    <section id="examples">
-      <h2>Examples</h2>
+    <Section id="examples" title="Examples">
       <menu>
         {Object.keys(EXAMPLES).map((key) => (
           <TabButton
             isSelected={tabContent === key}
-            onSelect={() => handleSelect(key)}
+            onClick={() => handleSelect(key)}
             key={key}
           >
             {key}
@@ -44,7 +44,7 @@ export default function Examples() {
         ))}
       </menu>
       {tabViewContent}
-    </section>
+    </Section>
   );
 }
 
